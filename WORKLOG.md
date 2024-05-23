@@ -1,17 +1,17 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Daniel Teboul
 
-### date x
+### 5/22
 
-info
+Added the card class with appropriate fields and methods
 
 ### date y
 
 info
 
 
-## GROUP MEMBER 2
+## Tahmim Hassan
 
 ### date x
 
