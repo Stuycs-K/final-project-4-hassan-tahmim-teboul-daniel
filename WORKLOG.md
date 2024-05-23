@@ -6,9 +6,9 @@
 
 Added the card class with appropriate fields and methods
 
-### date y
+### 5/23
 
-info
+card subclasses, player class
 
 
 ## Tahmim Hassan
