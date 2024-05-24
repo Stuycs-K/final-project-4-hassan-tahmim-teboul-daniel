@@ -6,10 +6,14 @@ class Player{
       hand.add(deck.remove(Math.random() * 109));
     }
     hand.sortHand();
-  
+  }
+/*  
   public void sortHand(){
     ArrayList<Card> shuffled = new ArrayList<>(hand.length);
-    
+  }
   
   public Card playCard(){
+  }
+  */
+  }
     
