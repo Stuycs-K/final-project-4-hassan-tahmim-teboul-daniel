@@ -9,6 +9,13 @@
     colr = color(0);
     name = "";
   }
+    public Card(int worth, color colur){
+    value = worth;
+    colr = colur;
+    name = "" + colur + " " + worth;
+    x = 0;
+    y = 0;
+    }
   
   public Card(int worth, color colur, int xs, int ys){
     value = worth;
@@ -37,8 +44,16 @@
   }
   void display(){
     fill(colr);
-    rect(x, y, 126,200);
-    text(value, x+20, y + 20);
+    rect(x - 28, y - 43, 56,86);
+    textSize(23);
+    fill(255,255,255);
+    text(value, x - 7, y + 10);
+    textSize(5);
+    text(value, x - 13,y - 20);
+    text(value, x + 13, y + 20);
+    text(value, x + 13, y - 20);
+    text(value, x - 13, y + 20);
+    
   }
 }
     

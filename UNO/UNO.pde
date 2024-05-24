@@ -6,7 +6,7 @@ void setup(){
 }
 
   void mouseClicked(){
-    deck.add(new Card(1, color(255,0,0)), mouseX, mouseY);
+    deck.add(new Card(mouseX % 10, color(255,0,0), mouseX, mouseY));
   }
   void draw(){
     for(Card card:deck){
