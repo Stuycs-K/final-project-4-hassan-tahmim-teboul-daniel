@@ -2,14 +2,17 @@
 
 ## Daniel Teboul
 
-### 5/22
+### 5/27
 
-Added the card class with appropriate fields and methods
+added card.compareTo, sortHand by color and then by value
 
 ### 5/23
 
 card subclasses, player class
 
+### 5/22
+
+Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
