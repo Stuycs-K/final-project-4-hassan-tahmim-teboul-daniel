@@ -1,6 +1,6 @@
 //public class draw4 extends wildcard{
 //  public draw4(){
-//    super();
+//    super(14);
 //    name = "draw4";
 //  }
 //}
