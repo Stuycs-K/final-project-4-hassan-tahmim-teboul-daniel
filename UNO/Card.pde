@@ -57,7 +57,6 @@
       return this.value - other.value;
     }
   }
-<<<<<<< HEAD
   
 =======
   
@@ -65,7 +64,7 @@
     return this.value == value || this.colr == colr;
   }
   
->>>>>>> 339c915dba398d33d7ad579b16a73c295e0045c7
+
   void display(){
     fill(colr);
     rect(x - 28, y - 43, 56,86);
