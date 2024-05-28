@@ -42,7 +42,7 @@
   public String getName(){
     return name;
   }
-  
+  /*
   @Override
   public int compareTo(){
     if (this.colr != other.colr){
@@ -52,13 +52,14 @@
       return this.value - other.value;
     }
   }
+  */
   void display(){
     fill(colr);
     rect(x - 28, y - 43, 56,86);
     textSize(23);
     fill(255,255,255);
     text(value, x - 7, y + 10);
-    textSize(5);
+    textSize(10);
     text(value, x - 13,y - 20);
     text(value, x + 13, y + 20);
     text(value, x + 13, y - 20);
