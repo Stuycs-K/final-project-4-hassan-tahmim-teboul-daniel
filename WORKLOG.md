@@ -2,6 +2,10 @@
 
 ## Daniel Teboul
 
+### 5/28
+
+fixed constructor for special cards. added card valid play boolean
+
 ### 5/27
 
 added card.compareTo, sortHand by color and then by value
