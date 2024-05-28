@@ -19,7 +19,7 @@
     
     public Card(int worth){
       value = worth;
-      colr = null;
+      colr = 0;
     }
   
   public Card(int worth, color colur, int xs, int ys){
@@ -57,6 +57,11 @@
       return this.value - other.value;
     }
   }
+  
+  public boolean valid(int value, color colr){
+    return this.value == value || this.colr == colr;
+  }
+  
   void display(){
     fill(colr);
     rect(x - 28, y - 43, 56,86);

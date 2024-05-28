@@ -1,4 +1,4 @@
-/*class Player{
+class Player{
   private ArrayList<Card> hand;
   
   public Player(ArrayList<Card> deck){
