@@ -16,6 +16,11 @@
     x = 0;
     y = 0;
     }
+    
+    public Card(int worth){
+      value = worth;
+      colr = null;
+    }
   
   public Card(int worth, color colur, int xs, int ys){
     value = worth;
