@@ -19,7 +19,7 @@
     
     public Card(int worth){
       value = worth;
-      colr = null;
+      colr = 0;
     }
   
   public Card(int worth, color colur, int xs, int ys){
@@ -47,7 +47,7 @@
   public String getName(){
     return name;
   }
-  /*
+ 
   @Override
   public int compareTo(){
     if (this.colr != other.colr){
@@ -57,14 +57,22 @@
       return this.value - other.value;
     }
   }
-  */
+<<<<<<< HEAD
+  
+=======
+  
+  public boolean valid(int value, color colr){
+    return this.value == value || this.colr == colr;
+  }
+  
+>>>>>>> 339c915dba398d33d7ad579b16a73c295e0045c7
   void display(){
     fill(colr);
     rect(x - 28, y - 43, 56,86);
     textSize(23);
     fill(255,255,255);
     text(value, x - 7, y + 10);
-    textSize(10);
+    textSize(5);
     text(value, x - 13,y - 20);
     text(value, x + 13, y + 20);
     text(value, x + 13, y - 20);

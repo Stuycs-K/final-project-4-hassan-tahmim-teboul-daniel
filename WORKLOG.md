@@ -2,6 +2,10 @@
 
 ## Daniel Teboul
 
+### 5/28
+
+fixed constructor for special cards. added card valid play boolean
+
 ### 5/27
 
 added card.compareTo, sortHand by color and then by value
@@ -16,10 +20,13 @@ Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
-### date x
 
-info
+### 5/23
 
-### date y
+Added card display card x and y value
 
-info
+### 5/22
+
+Added setName() setValue() for card class.
+
+
