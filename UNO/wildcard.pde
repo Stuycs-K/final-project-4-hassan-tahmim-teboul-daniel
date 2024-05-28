@@ -1,6 +1,6 @@
 //public class wildcard extends Card{
 //  public wildcard(){
-//    super();
+//    super(15);
 //    name = "Wildcard";
 //  }
 //}
