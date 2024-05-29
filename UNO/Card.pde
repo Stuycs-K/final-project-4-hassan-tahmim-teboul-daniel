@@ -35,6 +35,9 @@
   public void sety(int newy){
     y = newy;
   }
+  public void setColor(color colur){
+    colr = colur;
+  }
   
   public int getValue(){
     return value;
@@ -47,7 +50,11 @@
   public String getName(){
     return name;
   }
- 
+  
+  public boolean isValid(Card other){
+    return(this.getColor() == other.getColor() || this.getValue() == other.getValue() || this.getValue() > 12);
+  }
+  
   @Override
   public int compareTo(){
     if (this.colr != other.colr){
