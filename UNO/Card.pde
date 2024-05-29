@@ -58,8 +58,6 @@
     }
   }
   
-=======
-  
   public boolean valid(int value, color colr){
     return this.value == value || this.colr == colr;
   }
