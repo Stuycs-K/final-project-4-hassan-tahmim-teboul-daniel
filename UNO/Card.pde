@@ -47,7 +47,7 @@
   public String getName(){
     return name;
   }
-  
+ 
   @Override
   public int compareTo(){
     if (this.colr != other.colr){
@@ -62,6 +62,7 @@
     return this.value == value || this.colr == colr;
   }
   
+
   void display(){
     fill(colr);
     rect(x - 28, y - 43, 56,86);
