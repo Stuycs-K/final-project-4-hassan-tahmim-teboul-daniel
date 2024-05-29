@@ -4,7 +4,7 @@
 
 ### 5/28
 
-fixed constructor for special cards. added card valid play boolean
+fixed constructor for special cards. added card valid play boolean. started creating deck
 
 ### 5/27
 
