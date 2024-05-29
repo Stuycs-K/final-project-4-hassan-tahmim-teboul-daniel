@@ -2,6 +2,9 @@
 
 ## Daniel Teboul
 
+### 5/29
+added player draw and play card methods, created deck class
+
 ### 5/28
 
 fixed constructor for special cards. added card valid play boolean. started creating deck
