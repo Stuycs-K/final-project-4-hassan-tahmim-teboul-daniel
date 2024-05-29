@@ -21,6 +21,12 @@ void setup(){
     }
   }
   
+  //draw 4, wild card
+  for (int i = 0; i < 4;i++){
+    deck.add(new Card(13)); //draw4
+    deck.add(new Card(14)); //wildcard
+  }
+  
   
 }
 
