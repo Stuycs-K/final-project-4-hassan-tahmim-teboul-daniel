@@ -19,7 +19,7 @@ public class Card implements Comparable<Card>{
     
     public Card(int worth){
       value = worth;
-      colr = 0;
+      colr = color(0);
     }
   
   public Card(int worth, color colur, int xs, int ys){
@@ -56,12 +56,12 @@ public class Card implements Comparable<Card>{
   }
   
   @Override
-  public int compareTo(){
-    if (this.colr != other.colr){
-      return this.colr - other.colr;
+  public int compareTo(Card other){
+    if (this.colr != other.getColor()){
+      return this.colr - other.getColor();
     }
     else{
-      return this.value - other.value;
+      return this.value - other.getValue();
     }
   }
  

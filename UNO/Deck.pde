@@ -53,6 +53,6 @@ public class Deck{
   }
   
   public int size(){
-    return deck.size;
+    return deck.size();
   }
 }
