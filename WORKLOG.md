@@ -24,6 +24,9 @@ Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
+### 5/29 
+
+
 ### 5/28
 
 Added desk image working on card display
