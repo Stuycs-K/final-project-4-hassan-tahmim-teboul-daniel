@@ -19,7 +19,7 @@ public class Card implements Comparable<Card>{
     
     public Card(int worth){
       value = worth;
-      colr = 0;
+      colr = color(0);
     }
   
   public Card(int worth, color colur, int xs, int ys){
