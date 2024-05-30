@@ -3,7 +3,8 @@
 ## Daniel Teboul
 
 ### 5/29
-added player draw and play card methods, created deck class
+Fixed deck initialization, fixing UNO class, made Card implement comparable (At home).
+added player draw and play card methods, created deck class (class).
 
 ### 5/28
 
