@@ -1,4 +1,4 @@
-class Deck{
+public class Deck{
   ArrayList<color> colorList;
   ArrayList<Card> deck;
   
