@@ -8,6 +8,10 @@ public class Player{
     }
    sortHand();
   }
+  
+  public ArrayList<Card> getHand(){
+    return hand;
+  }
 
   public void sortHand(){
     Collections.sort(hand);
