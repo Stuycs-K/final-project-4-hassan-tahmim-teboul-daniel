@@ -2,6 +2,9 @@
 
 ## Daniel Teboul
 
+### 5/30
+Fixed accessor methods in the classes. Fixed compareTo implementation. Fixing arraylist of colors. 
+
 ### 5/29
 Fixed deck initialization, fixing UNO class, made Card implement comparable (At home).
 added player draw and play card methods, created deck class (class).
