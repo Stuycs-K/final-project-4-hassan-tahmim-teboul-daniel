@@ -43,4 +43,16 @@ public class Deck{
     deck.add(new Card(14)); //wildcard
   }
   }
+  
+  public Card get(int index){
+    return deck.get(index);
+  }
+  
+  public Card remove(int index){
+    return deck.remove(index);
+  }
+  
+  public int size(){
+    return deck.size;
+  }
 }

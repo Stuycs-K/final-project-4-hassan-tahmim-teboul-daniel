@@ -1,7 +1,7 @@
 public class Player{
   private ArrayList<Card> hand;
   
-  public Player(ArrayList<Card> deck){
+  public Player(Deck deck){
    hand = new ArrayList<Card>();
    for (int i = 0; i < 7; i++){
       hand.add(deck.remove((int) (Math.random() * deck.size())));
@@ -18,4 +18,5 @@ public class Player{
   public Card drawCard(){
     return hand.add((deck.remove((int) (Math.random() * deck.size()))));
  }
+}
     
