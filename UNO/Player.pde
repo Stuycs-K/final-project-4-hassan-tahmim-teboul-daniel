@@ -12,7 +12,10 @@ class Player{
   public void sortHand(){
     Collections.sort(hand);
   }  
-  public Card playCard(){
+  public Card playCard(Card chosen){
+    return hand.remove(chosen);
   }
+  public Card drawCard(){
+    return hand.add((deck.remove((int) (Math.random() * deck.size()))));
  }
     
