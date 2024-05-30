@@ -1,4 +1,4 @@
-UNO game;
+public UNO game;
 
 void setup() {
   size(1000, 700);
@@ -15,9 +15,9 @@ void mouseClicked() {
 
 class UNO {
   
-  Deck deck;
+  private Deck deck;
   
-  UNO(){
+  public UNO(){
     deck = new Deck();
   }
   
