@@ -27,8 +27,11 @@ Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
-### 5/29 
+### 5/30
+Added game class to run game and added functions to play
 
+### 5/29 
+Added color values for arrayList colors
 
 ### 5/28
 

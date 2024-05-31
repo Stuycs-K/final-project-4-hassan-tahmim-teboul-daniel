@@ -13,7 +13,7 @@ class GAME{
   public void turn(){
     while(game){
       if (whosTurn == 1){
-        if(!players.get(1).canPlay()){
+        if(!canPlay()){
           playerhand.drawCard();
         }
         else{
@@ -39,7 +39,7 @@ class GAME{
    playerhand = players.get(0).getHand();
    cpuhand = players.get(1).getHand();
    
-  }
+  } 
   
   
   
