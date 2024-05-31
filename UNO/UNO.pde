@@ -1,33 +1,33 @@
-public UNO game;
+//public UNO game;
 
-void setup() {
-  size(1000, 700);
-  game = new UNO();
-}
+//void setup() {
+//  size(1000, 700);
+//  game = new UNO();
+//}
 
-void draw() {
-  game.draw();
-}
+//void draw() {
+//  game.draw();
+//}
 
-void mouseClicked() {
-  game.mouseClicked();
-}
+//void mouseClicked() {
+//  game.mouseClicked();
+//}
 
-class UNO {
+//class UNO {
   
-  private Deck deck;
+//  private Deck deck;
   
-  public UNO(){
-    deck = new Deck();
-  }
+//  public UNO(){
+//    deck = new Deck();
+//  }
   
-  void mouseClicked(){
-    deck.add(new Card(mouseX % 10, color(255,0,0), mouseX, mouseY));
-  }
+//  void mouseClicked(){
+//    deck.add(new Card(mouseX % 10, color(255,0,0), mouseX, mouseY));
+//  }
   
-  void draw(){
-    for(Card card:deck){
-     card.display();
-    }
-  }
-}
+//  void draw(){
+//    for(Card card:deck){
+//     card.display();
+//    }
+//  }
+//}

@@ -1,4 +1,4 @@
-public class Player{
+class Player{
   private ArrayList<Card> hand;
   private String name;
   
