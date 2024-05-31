@@ -41,9 +41,10 @@ class GAME{
   
   public void cpuTurn(){
     Player cpu = players.get(1);
-    if (cpu.canPlay(mostRecent) != -1){
-      mostRecent = cpu.get(cpu.canPlay());
-      cpu.playCard(cpu.get(cpu.canPlay()));
+    int canplay = cpu.canPlay(mostRecent);
+    if (canplay != -1){
+      mostRecent = cpu.get(canplay);
+      cpu.playCard(cpu.get(canplay));
       pile.add(mostRecent);
     }
     else{
