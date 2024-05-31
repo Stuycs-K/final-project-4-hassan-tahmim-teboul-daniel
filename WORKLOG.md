@@ -27,6 +27,9 @@ Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
+### 5/31
+Added cpu turn and player turn to functions, made it so that when a player cannot play, automatically forces them to draw a card
+
 ### 5/30
 Added game class to run game and added functions to play
 
