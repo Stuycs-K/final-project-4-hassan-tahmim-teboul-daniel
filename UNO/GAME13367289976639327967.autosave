@@ -1,0 +1,50 @@
+class GAME extends UNO {
+ public Deck deck = new Deck();
+ public ArrayList<Player> players;
+ public int whosTurn = 1;
+ public int numTurn;
+ public boolean clockwise = true;
+ public boolean game = true;
+ 
+ 
+ 
+ public void turn(){
+   while (game){
+   
+   
+  numTurn++;
+  if (whosTurn < players.size()){
+    whosTurn ++;
+  }else{
+   whosTurn = 1; 
+  }
+  if (players.size() < 2){
+    game = false;
+  }
+   }
+ }
+ 
+ public void drawCard(){
+   
+ }
+ 
+ public void playCard(){
+   
+ }
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+}
