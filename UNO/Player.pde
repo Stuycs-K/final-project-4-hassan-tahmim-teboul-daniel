@@ -31,5 +31,8 @@ public class Player{
   public Card drawCard(){
     return hand.add((deck.remove((int) (Math.random() * deck.size()))));
  }
+ public Card get(int index){
+  return hand.get(index); 
+ }
 }
     
