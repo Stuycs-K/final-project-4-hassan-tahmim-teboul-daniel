@@ -1,5 +1,6 @@
 public class Player{
   private ArrayList<Card> hand;
+  private String name;
   
   public Player(Deck deck){
    hand = new ArrayList<Card>();
@@ -9,17 +10,22 @@ public class Player{
    sortHand();
   }
   
+  public Player(Deck deck, String name){
+    Player(deck);
+    this.name = name;
+  }
+  
   public ArrayList<Card> getHand(){
     return hand;
   }
   
-  public boolean canPlay(Card played){
+  public int canPlay(Card played){
     for (int i = 0; i < hand.length; i++){
       if (hand.get(i).isValid(played)){
-        return true;
+        return i;
       }
     }
-    return false;
+    return -1;
   }
 
   public void sortHand(){

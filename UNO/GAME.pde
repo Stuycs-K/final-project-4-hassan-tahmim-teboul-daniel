@@ -7,6 +7,8 @@ class GAME{
   public int whosTurn = 1;
   public int numTurns = 0;
   public boolean game = true;
+  public Card mostRecent;
+  public ArrayList<Card> pile;
   
   
   
@@ -30,14 +32,24 @@ class GAME{
   }
   
   public void setupHands(){
-   players.add(new Player(deck));
-   players.add(new Player(deck));
+
+   players.add(new Player(deck, "Player 1"));
+   players.add(new Player(deck, "CPU"));  //players index 1, cpu
 
    
   }
   
   public void cpuTurn(){
-    
+    Player cpu = players.get(1);
+    if (cpu.canPlay(mostRecent) != -1){
+      mostRecent = cpu.get(cpu.canPlay());
+      cpu.playCard(cpu.get(cpu.canPlay()));
+      pile.add(mostRecent);
+    }
+    else{
+      cpu.drawCard();
+    }
+       
     
   }
   
