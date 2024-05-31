@@ -13,13 +13,9 @@ class GAME{
   public void turn(){
     while(game){
       if (whosTurn == 1){
-        if(!players.get(1).canPlay()){
-          playerhand.drawCard();
-        }
-        else{
-          
-        }
+        playerTurn();
       }else{
+        cpuTurn();
         
       }   
     
@@ -39,6 +35,15 @@ class GAME{
    playerhand = players.get(0).getHand();
    cpuhand = players.get(1).getHand();
    
+  }
+  
+  public void cpuTurn(){
+    
+    
+  }
+  
+  public void playerTurn(){
+    
   }
   
   
