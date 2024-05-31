@@ -12,6 +12,15 @@ public class Player{
   public ArrayList<Card> getHand(){
     return hand;
   }
+  
+  public boolean canPlay(Card played){
+    for (int i = 0; i < hand.length; i++){
+      if (hand.get(i).isValid(played)){
+        return true;
+      }
+    }
+    return false;
+  }
 
   public void sortHand(){
     Collections.sort(hand);
