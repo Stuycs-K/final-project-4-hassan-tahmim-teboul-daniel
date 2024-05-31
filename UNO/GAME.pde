@@ -32,8 +32,7 @@ class GAME{
   public void setupHands(){
    players.add(new Player(deck));
    players.add(new Player(deck));
-   playerhand = players.get(0).getHand();
-   cpuhand = players.get(1).getHand();
+
    
   }
   
@@ -43,7 +42,14 @@ class GAME{
   }
   
   public void playerTurn(){
-    
+    Player person = players.get(0);
+    for(int i = 0; i < person.getHand().size(); i++){
+     if (person.canPlay(mostRecent) == -1){
+        players.get(0).drawCard();      
+     }else{
+            
+     }
+    }
   }
   
   
