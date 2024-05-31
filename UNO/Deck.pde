@@ -1,5 +1,5 @@
-public class Deck{
-  ArrayList<color> colorList;
+class Deck{
+  color[] colorList;
   ArrayList<Card> deck;
   
   
@@ -9,22 +9,14 @@ public class Deck{
     color blue = color(51,51,255);
     color green = color(51,255,51);
   
-    colorList = new ArrayList<color>();
-    colorList.add(red);
-    colorList.add(yellow);
-    colorList.add(blue);
-    colorList.add(green);
-    colorList.add(red);
-    colorList.add(yellow);
-    colorList.add(blue);
-    colorList.add(green);
+    colorList = new color[]{red, yellow, blue, green, red, yellow, blue, green};
     
     deck = new ArrayList<Card>();
   
   //numbered cards
   for (int i = 0; i < 8;i++){
     for (int j = 0; j < 10; j++){
-      deck.add(new Card(j, colorList.get(i)));
+      deck.add(new Card(j, colorList[i]));
     }
   }
   
@@ -33,7 +25,7 @@ public class Deck{
   //skip, reverse, draw 2
   for (int i = 0; i < 8; i++){
     for (int j = 10; j < 13; j++){
-      deck.add(new Card(j, colorList.get(i)));
+      deck.add(new Card(j, colorList[i]));
     }
   }
   

@@ -1,4 +1,4 @@
-public class Card implements Comparable<Card>{
+class Card implements Comparable<Card>{
   private int x,y;
   private int value;
   private color colr;
