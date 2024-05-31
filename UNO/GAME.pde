@@ -12,9 +12,16 @@ class GAME{
   
   public void turn(){
     while(game){
-    
-    
-    
+      if (whosTurn == 1){
+        if(!canPlay()){
+          playerhand.drawCard();
+        }
+        else{
+          
+        }
+      }else{
+        
+      }   
     
    numTurns ++;
    if(whosTurn < players.size()){
@@ -29,8 +36,9 @@ class GAME{
   public void setupHands(){
    players.add(new Player(deck));
    players.add(new Player(deck));
-   ArrayList<Card> playerhand = players.get(0).getHand();
-   ArrayList<Card> cpuhand = players.get(1).getHand();
+   playerhand = players.get(0).getHand();
+   cpuhand = players.get(1).getHand();
+   
   }
   
   
