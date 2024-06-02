@@ -34,6 +34,7 @@ class Deck{
     deck.add(new Card(13)); //draw4
     deck.add(new Card(14)); //wildcard
   }
+  Collections.shuffle(deck);
   }
   
   public Card get(int index){

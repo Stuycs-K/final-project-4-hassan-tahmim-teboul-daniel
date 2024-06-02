@@ -5,7 +5,7 @@ class Player{
   public Player(Deck deck){
    hand = new ArrayList<Card>();
    for (int i = 0; i < 7; i++){
-      hand.add(deck.remove((int) (Math.random() * deck.size())));
+      hand.add(deck.remove(0));
     }
    sortHand();
   }
@@ -13,7 +13,7 @@ class Player{
   public Player(Deck deck, String name){
     hand = new ArrayList<Card>();
    for (int i = 0; i < 7; i++){
-      hand.add(deck.remove((int) (Math.random() * deck.size())));
+      hand.add(deck.remove(0));
     }
    sortHand();
     this.name = name;
@@ -43,7 +43,7 @@ class Player{
     return chosen;
   }
   public Card drawCard(Deck deck){
-    Card newCard = (deck.remove((int) (Math.random() * deck.size())));
+    Card newCard = (deck.remove(0));
     hand.add(newCard);
     return newCard;
  }

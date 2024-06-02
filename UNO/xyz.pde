@@ -1,6 +1,6 @@
 
   public Deck deck = new Deck();
-  public ArrayList<Player> players = new ArrayList<>();
+  public ArrayList<Player> players = new ArrayList<Player>();
   public boolean clockwise = true; //game starts out clockwise
   public ArrayList<Card> playerhand = new ArrayList<Card>();
   public ArrayList<Card> cpuhand = new ArrayList<Card>();
@@ -8,7 +8,7 @@
   public int numTurns = 0;
   public boolean game = true;
   public Card mostRecent;
-  public ArrayList<Card> pile;
+  public ArrayList<Card> pile = new ArrayList<Card>();
   
   
   
@@ -55,27 +55,44 @@
   }
   
   public void playerTurn() {
-        Player person = players.get(0);
-        Scanner scanner = new Scanner(System.in);
-        boolean playedCard = false;
-
-        for (int i = 0; i < person.getHand().size(); i++) {
-            if (person.canPlay(mostRecent, i)) {
-                System.out.println("You can play card " + (i + 1));
-                System.out.print("Do you want to play this card? (y/n): ");
-                String playCard = scanner.nextLine();
-                if (playCard.equalsIgnoreCase("y")) {
-                    mostRecent = person.get(i);
-                    person.playCard(person.get(i));
-                    pile.add(mostRecent);
-                    playedCard = true;
-                    break;
-                }
-            }
-        }
-        if (!playedCard) {
-            person.drawCard(deck);
-        }
+        
     }
+    public void setup() {
+    size(800, 600);
+    setupHands();
+    mostRecent = deck.remove(0);
+    while (mostRecent.getValue() >= 13){
+      mostRecent=deck.remove(0);
+      
+    }
+    pile.add(mostRecent);
+  }
+  
+  public void draw() {
+    background(255);
+
+
+    int handX = 10; 
+    int handY = 50; 
+    for (Card card : players.get(whosTurn).getHand()) {
+      card.display(handX, handY);
+      handX += 60; 
+    }
+
+
+    int deckX = width - 60; 
+    int deckY = height - 80; 
+    fill(128); 
+    rect(deckX, deckY, 50, 70);
+    textAlign(CENTER, CENTER);
+    text("DECK", deckX + 25, deckY + 35);
+
+
+    if (!pile.isEmpty()) {
+      int pileX = width / 2 - 25;
+      int pileY = 150; 
+      pile.get(pile.size() - 1).display(pileX, pileY); 
+    }
+  }
   
   
