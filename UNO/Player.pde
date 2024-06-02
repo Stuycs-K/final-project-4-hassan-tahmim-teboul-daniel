@@ -27,6 +27,9 @@ class Player{
     }
     return -1;
   }
+  public boolean canPlay(Card played, int i){
+    return hand.get(i).isValid(played);
+  }
 
   public void sortHand(){
     Collections.sort(hand);
