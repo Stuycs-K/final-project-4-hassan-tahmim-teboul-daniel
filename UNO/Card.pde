@@ -94,9 +94,11 @@ class Card implements Comparable<Card>{
       text("REV", x + 25, y + 35);
     } else if (value == 12) {
       text("+2", x + 25, y + 35);
-    } else if (value == 13) {
+    } else if (value == 14) {
+      fill(255);
       text("WILD", x + 25, y + 35);
     } else {
+      fill(255);
       text("+4", x + 25, y + 35);
     }
   }
