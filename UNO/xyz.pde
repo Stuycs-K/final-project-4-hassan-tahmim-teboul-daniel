@@ -74,7 +74,7 @@ class GAME{
             }
         }
         if (!playedCard) {
-            person.drawCard();
+            person.drawCard(deck);
         }
     }
   
