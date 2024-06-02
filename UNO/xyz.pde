@@ -48,7 +48,7 @@ class GAME{
       pile.add(mostRecent);
     }
     else{
-      cpu.drawCard();
+      cpu.drawCard(deck);
     }
        
     
