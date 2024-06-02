@@ -51,6 +51,10 @@ class Card implements Comparable<Card>{
     return name;
   }
   
+  public void setName(String name){
+    this.name = name;
+  }
+  
   public boolean isValid(Card other){
     return(this.getColor() == other.getColor() || this.getValue() == other.getValue() || this.getValue() > 12);
   }
