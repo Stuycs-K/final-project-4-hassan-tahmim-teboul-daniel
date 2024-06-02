@@ -12,7 +12,16 @@ class Card implements Comparable<Card>{
     public Card(int worth, color colur){
     value = worth;
     colr = colur;
-    name = "" + colur + " " + worth;
+    String[] cards = {"skip", "reverse", "draw 2", "draw 4", "wildcard"};
+    if (worth < 10){
+      name = "" + colur + " " + worth;
+    }
+    else if(worth < 13){
+      name = "" + colur + " " + cards[worth - 10];
+    }
+    else{
+      name = cards[worth-10];
+    }
     x = 0;
     y = 0;
     }
