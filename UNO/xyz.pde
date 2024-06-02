@@ -1,4 +1,4 @@
-class GAME{
+
   public Deck deck = new Deck();
   public ArrayList<Player> players = new ArrayList<>();
   public boolean clockwise = true; //game starts out clockwise
@@ -56,11 +56,11 @@ class GAME{
   
   public void playerTurn() {
         Player person = players.get(0);
-        Scanner scanner = new Scanner(System.in); // For user input
+        Scanner scanner = new Scanner(System.in);
         boolean playedCard = false;
 
         for (int i = 0; i < person.getHand().size(); i++) {
-            if (person.canPlay(mostRecent, i)) { // Assuming canPlay takes the index as well
+            if (person.canPlay(mostRecent, i)) {
                 System.out.println("You can play card " + (i + 1));
                 System.out.print("Do you want to play this card? (y/n): ");
                 String playCard = scanner.nextLine();
@@ -79,4 +79,3 @@ class GAME{
     }
   
   
-}
