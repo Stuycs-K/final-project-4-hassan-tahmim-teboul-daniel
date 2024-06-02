@@ -67,18 +67,25 @@ class Card implements Comparable<Card>{
  
   
 
-  void display(){
+  void display(int x, int y) {
+    rectMode(CORNER);
     fill(colr);
-    rect(x - 28, y - 43, 56,86);
-    textSize(23);
-    fill(255,255,255);
-    text(value, x - 7, y + 10);
-    textSize(5);
-    text(value, x - 13,y - 20);
-    text(value, x + 13, y + 20);
-    text(value, x + 13, y - 20);
-    text(value, x - 13, y + 20);
-    
+    rect(x, y, 50, 70);
+    fill(0);
+    textAlign(CENTER, CENTER);
+    if (value < 10) {
+      text(value, x + 25, y + 35);
+    } else if (value == 10) {
+      text("SKIP", x + 25, y + 35);
+    } else if (value == 11) {
+      text("REV", x + 25, y + 35);
+    } else if (value == 12) {
+      text("+2", x + 25, y + 35);
+    } else if (value == 13) {
+      text("WILD", x + 25, y + 35);
+    } else {
+      text("+4", x + 25, y + 35);
+    }
   }
 }
     
