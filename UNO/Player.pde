@@ -11,7 +11,11 @@ class Player{
   }
   
   public Player(Deck deck, String name){
-    Player(deck);
+    hand = new ArrayList<Card>();
+   for (int i = 0; i < 7; i++){
+      hand.add(deck.remove((int) (Math.random() * deck.size())));
+    }
+   sortHand();
     this.name = name;
   }
   
@@ -20,22 +24,28 @@ class Player{
   }
   
   public int canPlay(Card played){
-    for (int i = 0; i < hand.length; i++){
+    for (int i = 0; i < hand.size(); i++){
       if (hand.get(i).isValid(played)){
         return i;
       }
     }
     return -1;
   }
+  public boolean canPlay(Card played, int i){
+    return hand.get(i).isValid(played);
+  }
 
   public void sortHand(){
     Collections.sort(hand);
   }  
   public Card playCard(Card chosen){
-    return hand.remove(chosen);
+    hand.remove(chosen);
+    return chosen;
   }
-  public Card drawCard(){
-    return hand.add((deck.remove((int) (Math.random() * deck.size()))));
+  public Card drawCard(Deck deck){
+    Card newCard = (deck.remove((int) (Math.random() * deck.size())));
+    hand.add(newCard);
+    return newCard;
  }
  public Card get(int index){
   return hand.get(index); 
