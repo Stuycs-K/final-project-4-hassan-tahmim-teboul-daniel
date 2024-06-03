@@ -16,7 +16,6 @@
     while(game){
       if (whosTurn == 1){
         cpuTurn();
-        whosTurn = 0;
       }   
     
    numTurns ++;
@@ -36,10 +35,9 @@
   public void cpuTurn(){
     Player cpu = players.get(1);
     int canplay = cpu.canPlay(mostRecent);
-    if (canplay != -1){
-      mostRecent = cpu.get(canplay);
-      playCard(mostRecent);
-      pile.add(mostRecent);
+    if (canplay != -1) {
+        Card chosen = cpu.get(canplay);
+        playCard(chosen, cpu); 
     }
     else{
       cpu.drawCard(deck);
@@ -78,6 +76,9 @@
     rect(deckX, deckY, 50, 70);
     textAlign(CENTER, CENTER);
     text("DECK", deckX + 25, deckY + 35);
+    if (whosTurn == 1 && frameCount % 30 == 0) {
+    cpuTurn();
+    }
 
 
     if (!pile.isEmpty()) {
@@ -91,17 +92,16 @@
       if (mouseX >= width - 60 && mouseX <= width - 10 &&
           mouseY >= height - 80 && mouseY <= height - 10) {
         players.get(0).drawCard(deck);
-        whosTurn = 1;
       } else {
         int cardIndex = checkCardClicked();
         if (cardIndex != -1) {
           Card chosecard = players.get(whosTurn).get(cardIndex);
-          playCard(chosecard);
-          whosTurn = 1;
+          playCard(chosecard, players.get(0));
 
         }
       }
     }
+    whosTurn = 1;    
   }
   private int checkCardClicked() {
     int handX = 10; 
@@ -116,19 +116,20 @@
     }
     return -1;
   }
-  private void playCard(Card chosenCard) {
+  private void playCard(Card chosenCard, Player player) {
     if (chosenCard.isValid(mostRecent)) {
-      mostRecent = chosenCard;
-      players.get(whosTurn).playCard(mostRecent);
-      pile.add(mostRecent);
-      if (players.get(whosTurn).getHand().isEmpty()) {
-        System.out.println(players.get(whosTurn).name + " wins!");
-        game = false; // End the game
-      }
+        mostRecent = chosenCard;
+        player.playCard(chosenCard); 
+        pile.add(mostRecent);
+        if (player.getHand().isEmpty()) {
+            System.out.println(player.name + " wins!");
+            game = false; // End the game
+        }
+        whosTurn = (whosTurn + 1) % players.size();
     } else {
-      System.out.println("Invalid move. Please try again.");
+        System.out.println("Invalid move. Please try again.");
     }
-  }
+}
   
   
   
