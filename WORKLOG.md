@@ -2,6 +2,12 @@
 
 ## Daniel Teboul
 
+### 6/2
+Got rid of special subclasses, working game class.
+
+### 5/31
+Fixed deck creation with working special cards
+
 ### 5/30
 Fixed accessor methods in the classes. Fixed compareTo implementation. Fixing arraylist of colors. 
 
