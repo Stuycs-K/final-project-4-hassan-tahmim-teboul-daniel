@@ -32,6 +32,7 @@
   }
   
   public void cpuTurn(){
+    if (game){
     Player cpu = players.get(1);
     int canplay = cpu.canPlay(mostRecent);
     if (canplay != -1) {
@@ -42,15 +43,15 @@
       cpu.drawCard(deck);
     }
        
-    
+    }
   }
   
 
     public void setup() {
-    size(800, 600);
+    size(1600, 600);
     setupHands();
     mostRecent = deck.remove(0);
-    while (mostRecent.getValue() >= 13){
+    while (mostRecent.getValue() >= 10){ //change later so that no specials are played first, put back into deck as well
       mostRecent=deck.remove(0);
       
     }
@@ -93,7 +94,7 @@
     }
   }
   void mouseClicked(){
-    if (whosTurn == 0) {
+    if (whosTurn == 0 && game) {
       if (mouseX >= width - 60 && mouseX <= width - 10 &&
           mouseY >= height - 80 && mouseY <= height - 10) {
         players.get(0).drawCard(deck);
@@ -121,20 +122,41 @@
     }
     return -1;
   }
-  private void playCard(Card chosenCard, Player player) {
-    if (chosenCard.isValid(mostRecent)) {
+ private void playCard(Card chosenCard, Player player) {
+    if (chosenCard.isValid(mostRecent)) { 
         mostRecent = chosenCard;
         player.playCard(chosenCard); 
         pile.add(mostRecent);
+
         if (player.getHand().isEmpty()) {
             System.out.println(player.name + " wins!");
             game = false; // End the game
+            return;
         }
-        whosTurn = (whosTurn + 1) % players.size();
+
+        // Skip and Reverse both act the same: skip the other player's turn (will change when adding more people)
+        if (mostRecent.getValue() == 10 || mostRecent.getValue() == 11) { 
+            whosTurn = whosTurn;
+        } else {
+            whosTurn = (whosTurn + 1) % players.size();
+        }
+
+        if (mostRecent.getValue() == 12) { // Draw 2
+            Player nextPlayer = players.get(whosTurn);
+            nextPlayer.drawCard(deck);
+            nextPlayer.drawCard(deck);
+        } else if (mostRecent.getValue() == 13) { // Draw 4
+            Player nextPlayer = players.get(whosTurn);
+            for (int i = 0; i < 4; i++) {
+                nextPlayer.drawCard(deck);
+            }
+        }
+
     } else {
         System.out.println("Invalid move. Please try again.");
     }
 }
+
   
   
   
