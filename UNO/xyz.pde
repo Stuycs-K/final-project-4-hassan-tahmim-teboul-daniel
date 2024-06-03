@@ -136,5 +136,14 @@
     }
 }
   
+  void keyPressed(){
+    if (key == 'w'){
+     for(Card c : players.get(0).getHand()){
+       players.get(0).getHand().remove(c);  
+     }
+     
+    }
+  }
+  
   
   
