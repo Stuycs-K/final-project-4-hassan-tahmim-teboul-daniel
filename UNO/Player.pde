@@ -44,6 +44,7 @@ class Player{
   public Card drawCard(Deck deck){
     Card newCard = (deck.remove(0));
     hand.add(newCard);
+    sortHand();
     return newCard;
  }
  public Card get(int index){

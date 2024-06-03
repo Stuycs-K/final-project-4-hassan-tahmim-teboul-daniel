@@ -21,7 +21,6 @@
    numTurns ++;
      
   }
-  
   }
   
   public void setupHands(){
@@ -76,7 +75,7 @@
     rect(deckX, deckY, 50, 70);
     textAlign(CENTER, CENTER);
     text("DECK", deckX + 25, deckY + 35);
-    if (whosTurn == 1 && frameCount % 30 == 0) {
+    if (whosTurn == 1 && frameCount % 150 == 0) {
     cpuTurn();
     }
 
@@ -101,7 +100,7 @@
         }
       }
     }
-    whosTurn = 1;    
+
   }
   private int checkCardClicked() {
     int handX = 10; 
