@@ -67,6 +67,12 @@
       card.display(handX, handY);
       handX += 60; 
     }
+    handY = height - 80;
+    handX = 10;
+    for (Card card : players.get(1).getHand()) {
+      card.display(handX, handY);
+      handX += 60; 
+    }
 
 
     int deckX = width - 60; 
