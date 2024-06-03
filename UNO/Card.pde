@@ -65,7 +65,7 @@ class Card implements Comparable<Card>{
   }
   
   public boolean isValid(Card other){
-    return(this.getColor() == other.getColor() || this.getValue() == other.getValue() || this.getValue() > 12);
+    return(this.getColor() == other.getColor() || this.getValue() == other.getValue() || this.getValue() > 12) || other.getValue() > 12;
   }
   
   @Override
