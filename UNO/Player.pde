@@ -38,9 +38,8 @@ class Player{
   public void sortHand(){
     Collections.sort(hand);
   }  
-  public Card playCard(Card chosen){
+  public void playCard(Card chosen){
     hand.remove(chosen);
-    return chosen;
   }
   public Card drawCard(Deck deck){
     Card newCard = (deck.remove(0));
