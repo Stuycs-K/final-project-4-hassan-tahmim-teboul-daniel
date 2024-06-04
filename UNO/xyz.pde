@@ -49,6 +49,11 @@
 
     public void setup() {
     size(1600, 600);
+<<<<<<< HEAD
+=======
+    Desk = loadImage("Desk2.jpeg");
+
+>>>>>>> tahmim-branch
     setupHands();
     mostRecent = deck.remove(0);
     while (mostRecent.getValue() >= 10){ //change later so that no specials are played first, put back into deck as well
@@ -56,10 +61,11 @@
       
     }
     pile.add(mostRecent);
+
   }
   
   public void draw() {
-    background(255);
+    image(Desk,0,0, width, height);
 
 
     int handX = 10; 
@@ -89,7 +95,7 @@
 
     if (!pile.isEmpty()) {
       int pileX = width / 2 - 25;
-      int pileY = 150; 
+      int pileY = height / 2 - 30; 
       pile.get(pile.size() - 1).display(pileX, pileY); //displays the last card in the pile( so the card that needs to be compared to
     }
   }
