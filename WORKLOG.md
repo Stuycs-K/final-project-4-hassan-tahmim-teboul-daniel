@@ -2,6 +2,9 @@
 
 ## Daniel Teboul
 
+### 6/3
+Added images for all the cards
+
 ### 6/2
 Got rid of special subclasses, working game class.
 
