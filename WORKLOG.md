@@ -2,6 +2,9 @@
 
 ## Daniel Teboul
 
+### 6/5
+Added more image files for background, start menu
+
 ### 6/3
 Added images for all the cards
 
