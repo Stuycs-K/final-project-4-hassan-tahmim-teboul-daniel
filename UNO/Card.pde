@@ -1,4 +1,5 @@
 class Card implements Comparable<Card>{
+  PImage carddisplay;
   private int x,y;
   private int value;
   private color colr;
@@ -12,12 +13,22 @@ class Card implements Comparable<Card>{
     public Card(int worth, color colur){
     value = worth;
     colr = colur;
-    String[] cards = {"skip", "reverse", "draw 2", "draw 4", "wildcard"};
+    String cols = "";
+    if (colr == color(255,51,51)){
+     cols = "red"; 
+    }if (colr == color(255,255,51)){
+     cols = "yellow"; 
+    }if (colr == color(51,51,255)){
+     cols = "blue"; 
+    }if (colr == color(51,255,51)){
+     cols = "green"; 
+    }
+    String[] cards = {"Skip", "Reverse", "Draw2", "draw4", "wildcard"};
     if (worth < 10){
-      name = "" + colur + " " + worth;
+      name = "" + cols + worth;
     }
     else if(worth < 13){
-      name = "" + colur + " " + cards[worth - 10];
+      name = "" + cols +cards[worth - 10];
     }
     else{
       name = cards[worth-10];
@@ -81,6 +92,7 @@ class Card implements Comparable<Card>{
   
 
   void display(int x, int y) {
+    carddisplay = loadImage("Images/" + getName() + ".jpg");
     rectMode(CORNER);
     fill(colr);
     rect(x, y, 50, 70);
@@ -101,6 +113,7 @@ class Card implements Comparable<Card>{
       fill(255);
       text("+4", x + 25, y + 35);
     }
+   image(carddisplay, x ,y ,50, 70);
   }
 }
     
