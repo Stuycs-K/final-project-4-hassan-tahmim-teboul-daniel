@@ -52,6 +52,7 @@
 
     Desk = loadImage("Desk2.jpeg");
 
+
     setupHands();
     mostRecent = deck.remove(0);
     while (mostRecent.getValue() >= 10){ //change later so that no specials are played first, put back into deck as well
@@ -69,7 +70,6 @@
     int handX = 10; 
     int handY = 50; 
     for (Card card : players.get(0).getHand()) {
-      
       card.display(handX, handY);
       handX += 60; 
     }
