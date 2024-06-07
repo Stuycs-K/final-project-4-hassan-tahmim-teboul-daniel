@@ -50,7 +50,8 @@
     public void setup() {
     size(1600, 600);
 
-    Desk = loadImage("Desk2.jpeg");
+    Desk = loadImage("redBackground.jpg");
+    Deck = loadImage("drawCard.jpg")
 
     setupHands();
     mostRecent = deck.remove(0);
@@ -69,22 +70,25 @@
     int handX = 10; 
     int handY = 50; 
     for (Card card : players.get(0).getHand()) {
-      
+      if(card != null){
       card.display(handX, handY);
       handX += 60; 
+      }
     }
     handY = height - 80;
     handX = 10;
     for (Card card : players.get(1).getHand()) {
-      card.display(handX, handY);
-      handX += 60; 
+      if( card != null){
+        card.display(handX, handY);
+        handX += 60;
+      }
     }
 
 
     int deckX = width - 60; 
     int deckY = height - 80; 
-    fill(128); 
-    rect(deckX, deckY, 50, 70);
+    image(Deck, deckX, deckY, 50, 70);
+    
     textAlign(CENTER, CENTER);
     text("DECK", deckX + 25, deckY + 35);
     if (whosTurn == 1 && frameCount % 150 == 0) {
