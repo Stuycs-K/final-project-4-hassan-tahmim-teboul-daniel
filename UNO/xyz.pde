@@ -93,7 +93,7 @@
     
     textAlign(CENTER, CENTER);
     text("DECK", deckX + 25, deckY + 35);
-    if (whosTurn % 3 == 0 && frameCount % 150 == 0) {
+    if (whosTurn % 3 != 0 && frameCount % 150 == 0) {
     cpuTurn();
     }
 
