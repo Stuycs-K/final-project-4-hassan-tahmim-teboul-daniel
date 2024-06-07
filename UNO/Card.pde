@@ -40,6 +40,12 @@ class Card implements Comparable<Card>{
     public Card(int worth){
       value = worth;
       colr = color(0);
+      if (worth == 13){
+        name = "draw4";
+      }
+      else if (worth == 14){
+        name = "wildcard";
+      }
     }
   
   public Card(int worth, color colur, int xs, int ys){
