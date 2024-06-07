@@ -52,6 +52,7 @@
 
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
+    back = loadImage("Images/unoCard.jpg");
 
     setupHands();
     mostRecent = deck.remove(0);
@@ -60,6 +61,7 @@
       
     }
     pile.add(mostRecent);
+    
 
   }
   
@@ -79,7 +81,7 @@
     handX = 10;
     for (Card card : players.get(1).getHand()) {
       if( card != null){
-        card.display(handX, handY);
+        image(back, handX, handY, 50, 70);
         handX += 60;
       }
     }
@@ -91,7 +93,7 @@
     
     textAlign(CENTER, CENTER);
     text("DECK", deckX + 25, deckY + 35);
-    if (whosTurn == 1 && frameCount % 150 == 0) {
+    if (whosTurn % 3 == 0 && frameCount % 150 == 0) {
     cpuTurn();
     }
 
