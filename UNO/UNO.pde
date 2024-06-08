@@ -1,6 +1,8 @@
 PImage Desk;
 PImage Deck;
 PImage back;
+PImage back1;
+PImage back2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
