@@ -47,6 +47,7 @@
     back = loadImage("Images/unoCard.jpg");
     back1 = loadImage("Images/unoCard -Copy1.jpg");
     back2 = loadImage("Images/unoCard -Copy.jpg");
+    unoSymbol = loadImage("Images/unoSymbol.png");
 
 
     setupHands();
@@ -149,6 +150,7 @@
 
         if (player.getHand().isEmpty()) {
             System.out.println(player.name + " wins!");
+            image(unoSymbol, width/2,height/2, 200, 200);
             game = false; // End the game
             return;
         }

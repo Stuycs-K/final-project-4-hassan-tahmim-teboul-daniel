@@ -100,25 +100,7 @@ class Card implements Comparable<Card>{
   void display(int x, int y) {
     carddisplay = loadImage("Images/" + getName() + ".jpg");
     rectMode(CORNER);
-    fill(colr);
-    rect(x, y, 50, 70);
-    fill(0);
-    textAlign(CENTER, CENTER);
-    if (value < 10) {
-      text(value, x + 25, y + 35);
-    } else if (value == 10) {
-      text("SKIP", x + 25, y + 35);
-    } else if (value == 11) {
-      text("REV", x + 25, y + 35);
-    } else if (value == 12) {
-      text("+2", x + 25, y + 35);
-    } else if (value == 14) {
-      fill(255);
-      text("WILD", x + 25, y + 35);
-    } else {
-      fill(255);
-      text("+4", x + 25, y + 35);
-    }
+
    image(carddisplay, x ,y ,50, 70);
   }
 }
