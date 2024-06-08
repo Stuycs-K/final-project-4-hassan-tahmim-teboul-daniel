@@ -53,6 +53,7 @@
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
     back = loadImage("Images/unoCard.jpg");
+    unoSymbol = loadImage("Images/unoSymbol.png");
 
     setupHands();
     mostRecent = deck.remove(0);
@@ -141,6 +142,7 @@
 
         if (player.getHand().isEmpty()) {
             System.out.println(player.name + " wins!");
+            image(unoSymbol, width/2,height/2, 200, 200);
             game = false; // End the game
             return;
         }
