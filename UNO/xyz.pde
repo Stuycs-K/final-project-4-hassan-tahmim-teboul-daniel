@@ -11,29 +11,21 @@
   public ArrayList<Card> pile = new ArrayList<Card>();
   
   
-  
-  public void turn(){
-    while(game){
-      if (whosTurn == 1){
-        cpuTurn();
-      }   
-    
-   numTurns ++;
-     
-  }
-  }
+ 
   
   public void setupHands(){
   
    players.add(new Player(deck, "Player 1"));
    players.add(new Player(deck, "CPU"));  //players index 1, cpu
+   players.add(new Player(deck, "CPU2"));  //players index 1, cpu
+   players.add(new Player(deck, "CPU3"));  //players index 1, cpu
 
    
   }
   
   public void cpuTurn(){
     if (game){
-    Player cpu = players.get(1);
+    Player cpu = players.get(whosTurn % 4);
     int canplay = cpu.canPlay(mostRecent);
     if (canplay != -1) {
         Card chosen = cpu.get(canplay);
@@ -53,7 +45,10 @@
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
     back = loadImage("Images/unoCard.jpg");
+    back1 = loadImage("Images/unoCard -Copy1.jpg");
+    back2 = loadImage("Images/unoCard -Copy.jpg");
     unoSymbol = loadImage("Images/unoSymbol.png");
+
 
     setupHands();
     mostRecent = deck.remove(0);
@@ -70,30 +65,43 @@
     image(Desk,0,0, width, height);
 
 
-    int handX = 10; 
+    int handX = 200; 
     int handY = 50; 
-    for (Card card : players.get(0).getHand()) {
+    for (Card card : players.get(2).getHand()) {
       if(card != null){
-      card.display(handX, handY);
+        image(back, handX, handY, 50, 70);
       handX += 60; 
       }
     }
     handY = height - 80;
-    handX = 10;
-    for (Card card : players.get(1).getHand()) {
+    handX = 200;
+    for (Card card : players.get(0).getHand()) {
       if( card != null){
-        image(back, handX, handY, 50, 70);
+        card.display(handX, handY);
         handX += 60;
       }
     }
-
+    handX = 10;
+    handY = 80;
+    for (Card card : players.get(3).getHand()) {
+      if(card != null){
+        image(back1, handX, handY, 50, 70);
+        handY += 50; 
+      }
+    }
+    handX = width - 70;
+    handY = 80;
+    for (Card card : players.get(2).getHand()) {
+      if(card != null){
+        image(back1, handX, handY, 50, 70);
+        handY += 50; 
+      }
+    }
 
     int deckX = width - 60; 
     int deckY = height - 80; 
     image(Deck, deckX, deckY, 50, 70);
     
-    textAlign(CENTER, CENTER);
-    text("DECK", deckX + 25, deckY + 35);
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
@@ -122,9 +130,9 @@
 
   }
   private int checkCardClicked() {
-    int handX = 10; 
+    int handX = 200; 
     int cardWidth = 50; 
-    int cardHeight = 70;
+    int cardHeight = height - 80;
     for (int i = 0; i < players.get(0).getHand().size(); i++) {
       if (mouseX >= handX && mouseX <= handX + cardWidth &&
           mouseY >= 50 && mouseY <= 50 + cardHeight) {
@@ -149,7 +157,7 @@
 
         // Skip and Reverse both act the same: skip the other player's turn (will change when adding more people)
         if (mostRecent.getValue() == 10 || mostRecent.getValue() == 11) { 
-            whosTurn = whosTurn;
+            whosTurn = whosTurn % players.size();
         } else {
             whosTurn = (whosTurn + 1) % players.size();
         }

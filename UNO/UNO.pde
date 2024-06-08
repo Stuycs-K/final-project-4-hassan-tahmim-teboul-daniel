@@ -1,6 +1,8 @@
 PImage Desk;
 PImage Deck;
 PImage back;
+PImage back1;
+PImage back2;
 PImage unoSymbol;
 import java.util.ArrayList;
 import java.util.Collections;

@@ -42,6 +42,12 @@ Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
+### 6/7 
+Added images for background and deck, fixed more syntax
+
+### 6/5
+Displayed images for cards
+
 ### 6/2
 Added Game Draw, fixed game not compiling, made it so that cpu turn happens after a card is clicked or deck is clicked, added mouseclicked, playcard in game file, added setup and check card clicked
 
