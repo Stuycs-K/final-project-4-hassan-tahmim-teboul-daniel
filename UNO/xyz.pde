@@ -40,7 +40,7 @@
   
 
     public void setup() {
-    size(1600, 800);
+    size(1600, 1000);
 
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
@@ -48,6 +48,11 @@
     back1 = loadImage("Images/unoCard -Copy1.jpg");
     back2 = loadImage("Images/unoCard -Copy.jpg");
     unoSymbol = loadImage("Images/unoSymbol.png");
+    star = loadImage("Images/star.png");
+    rightArrow = loadImage("Images/arrow2.png");
+    verticalArrow = loadImage("Images/verticalArrow.png");
+    clock = loadImage("Images/clockwise.png");
+    counterClock = loadImage("Images/counterClock.png");
 
 
     setupHands();
@@ -63,7 +68,29 @@
   
   public void draw() {
     image(Desk,0,0, width, height);
-
+    if (whosTurn == 0){
+      image(star, 80, height - 110, 100, 100);
+    }
+    else if (whosTurn == 3){
+      image(star,80,200,100,100);
+    }
+    else if (whosTurn == 2){
+      image(star, 360, 130, 100, 100);
+    }
+    else if (whosTurn == 1){
+      image(star, width - 195, 200, 100, 100);
+    }
+    if (whosTurn == 0 && players.get(0).canPlay(mostRecent) == -1){
+      image(rightArrow, width - 190, height - 80, 120, 60);
+      image(verticalArrow,width - 67,height - 210, 60, 120);
+    }
+    
+    if (clockwise){
+      image(clock, (width / 2) - 100, (height / 2) - 90, 200, 200);
+    }
+    else{
+      image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
+    }
 
     int handX = 200; 
     int handY = 50; 
@@ -77,6 +104,10 @@
     handX = 200;
     for (Card card : players.get(0).getHand()) {
       if( card != null){
+        if (handX >= 1440){
+          handX = 200;
+          handY -= 100;
+        }
         if (whosTurn == 0 && card.isValid(mostRecent)){
           card.display(handX, handY - 20);
         }
@@ -117,6 +148,10 @@
       int pileY = height / 2 - 30; 
       pile.get(pile.size() - 1).display(pileX, pileY); //displays the last card in the pile( so the card that needs to be compared to
     }
+    
+    if (!game){
+      image(unoSymbol, width/2,height/2, 500, 500);
+    }
   }
   void mouseClicked(){
     if (whosTurn == 0 && game) {
@@ -155,7 +190,7 @@
 
         if (player.getHand().isEmpty()) {
             System.out.println(player.name + " wins!");
-            image(unoSymbol, width/2,height/2, 200, 200);
+            
             game = false; // End the game
             return;
         }
