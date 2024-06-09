@@ -42,7 +42,7 @@ class Player{
     hand.remove(chosen);
   }
   public Card drawCard(Deck deck){
-    Card newCard = (deck.remove(0));
+    Card newCard = (deck.remove((int)Math.random() * deck.size()));
     hand.add(newCard);
     sortHand();
     return newCard;

@@ -2,6 +2,9 @@
 
 ## Daniel Teboul
 
+### 6/8
+Fixed drawCard
+
 ### 6/7 
 Made card backs for cpu all the same back, changed background
 

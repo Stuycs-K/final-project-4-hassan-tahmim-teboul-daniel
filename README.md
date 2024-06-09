@@ -3,4 +3,6 @@
 ## The Goofy Goobers
 by Daniel Teboul and Tahmim Hassan
 ## Overview
+Our project is a replica of the popular card game, UNO, in Processing. 
 ## Instructions
+Our project has a lot of images, but they're all in their own folder in the UNO directory. 
