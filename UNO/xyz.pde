@@ -40,7 +40,7 @@
   
 
     public void setup() {
-    size(1600, 600);
+    size(1600, 800);
 
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
