@@ -77,6 +77,10 @@
     handX = 200;
     for (Card card : players.get(0).getHand()) {
       if( card != null){
+        if (handX >= 1440){
+          handX = 200;
+          handY -= 100;
+        }
         if (whosTurn == 0 && card.isValid(mostRecent)){
           card.display(handX, handY - 20);
         }
