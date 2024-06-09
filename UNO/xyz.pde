@@ -91,7 +91,7 @@
     }
     handX = width - 70;
     handY = 80;
-    for (Card card : players.get(2).getHand()) {
+    for (Card card : players.get(1).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
         handY += 50; 
@@ -156,10 +156,23 @@
         }
 
         // Skip and Reverse both act the same: skip the other player's turn (will change when adding more people)
-        if (mostRecent.getValue() == 10 || mostRecent.getValue() == 11) { 
-            whosTurn = whosTurn % players.size();
+        if (mostRecent.getValue() == 10) { 
+            whosTurn = (whosTurn + 2)  % players.size();
         } else {
+            if(mostRecent.getValue() == 11){
+             clockwise = !clockwise; 
+            }
+            if (clockwise){
+              if (whosTurn == 0){
+                whosTurn = 3;
+              }
+              else{
+              whosTurn = (whosTurn - 1) % players.size();
+              }
+            }
+            else{
             whosTurn = (whosTurn + 1) % players.size();
+          }
         }
 
         if (mostRecent.getValue() == 12) { // Draw 2
