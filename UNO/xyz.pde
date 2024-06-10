@@ -16,9 +16,9 @@
   
   public void setupHands(){
    players.add(new Player(deck, "Player 1"));
-   players.add(new Player(deck, "CPU"));  //players index 1, cpu
-   players.add(new Player(deck, "CPU2"));  //players index 1, cpu
-   players.add(new Player(deck, "CPU3"));  //players index 1, cpu
+   players.add(new Player(deck, "Donald"));  //players index 1, cpu
+   players.add(new Player(deck, "Harley"));  //players index 1, cpu
+   players.add(new Player(deck, "Spider"));  //players index 1, cpu
   }
   
   
@@ -35,9 +35,20 @@
         deck = new Deck();
     }
       cpu.drawCard(deck);
+      if (clockwise){
+              if (whosTurn == 0){
+                whosTurn = 3;
+              }
+              else{
+              whosTurn = (whosTurn - 1) % players.size();
+              }
+            }
+            else{
+            whosTurn = (whosTurn + 1) % players.size();
+          }
+        }
     }
     }
-  }
   
 
     public void setup() {
@@ -114,11 +125,13 @@
     fill(0);
     text("Donald", 200, 30);
     image(avatar2, 180, 37, 100, 100);
+    int x = 1;
     for (Card card : players.get(2).getHand()) {
-      if(card != null){
+      if(card != null && x < 20){
         image(back, handX, handY, 50, 70);
       handX += 60; 
       }
+      x++;
     }
     
     
@@ -156,11 +169,13 @@
     fill(0);
     text("Harley", 35,90);
     image(avatar3, 10, 97, 100, 100);
+    int i = 1;
     for (Card card : players.get(3).getHand()) {
-      if(card != null){
+      if(card != null && i < 15){
         image(back1, handX, handY, 50, 70);
         handY += 50; 
       }
+      i++;
     }
     
     
@@ -172,11 +187,13 @@
     fill(0);
     text("Spider", width - 95,90);
     image(avatar4, width - 120, 97, 100, 100);
+    int j = 1;
     for (Card card : players.get(1).getHand()) {
-      if(card != null){
+      if(card != null && j < 15){
         image(back1, handX, handY, 50, 70);
         handY += 50; 
       }
+      j++;
     }
     
     
@@ -227,7 +244,19 @@
               deck = new Deck();
             }
         players.get(0).drawCard(deck);
-      } 
+        if (clockwise){
+              if (whosTurn == 0){
+                whosTurn = 3;
+              }
+              else{
+              whosTurn = (whosTurn - 1) % players.size();
+              }
+            }
+            else{
+            whosTurn = (whosTurn + 1) % players.size();
+          }
+        }
+       
       
       else {
         int cardIndex = checkCardClicked();
@@ -244,6 +273,7 @@
         }
     }
   }
+ 
   
   
   private int checkCardClicked() {
@@ -274,6 +304,7 @@
             return;
         }
         if (mostRecent.getValue() == 0){
+          
          if (clockwise){
            ArrayList<Card> temphand = players.get(0).getHand();
            players.get(0).setHand(players.get(1).getHand());
