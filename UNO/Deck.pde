@@ -42,7 +42,7 @@ class Deck{
   }
   
   public Card remove(int index){
-    return deck.remove(index);
+      return deck.remove(index);
   }
   
   public int size(){

@@ -297,9 +297,12 @@
   
   void keyPressed() {
     if (key == 'k'){
-     game = !game; 
+     game = !game;
+     while(players.size() != 0){
+       players.remove(0);
+     }
+     setupHands();
     }
-    
   }
   
  private void playCard(Card chosenCard, Player player) {
