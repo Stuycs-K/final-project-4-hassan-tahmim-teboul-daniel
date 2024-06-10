@@ -22,6 +22,9 @@ class Player{
   public ArrayList<Card> getHand(){
     return hand;
   }
+  public void setHand(ArrayList<Card> newHand){
+   hand = newHand; 
+  }
   
   public int canPlay(Card played){
     for (int i = 0; i < hand.size(); i++){

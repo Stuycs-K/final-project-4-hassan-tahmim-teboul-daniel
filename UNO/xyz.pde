@@ -106,7 +106,7 @@
     int handX = 300; 
     int handY = 50; 
     fill(255);
-    rect(180, 10, 100 ,120);
+    rect(180, 10, 100 ,25);
     textSize(20);
     fill(0);
     text("Donald", 200, 30);
@@ -123,7 +123,7 @@
     handY = height - 80;
     handX = 200;
     fill(255);
-    rect(80,height - 130, 100, 120);
+    rect(80,height - 130, 100, 25);
     textSize(20);
     fill(0);
     text("Batman", 95, height - 110);
@@ -149,7 +149,7 @@
     handX = 10;
     handY = 200;
     fill(255);
-    rect(10,70, 100, 120);
+    rect(10,70, 100, 25);
     fill(0);
     text("Harley", 35,90);
     image(avatar3, 10, 90, 100, 100);
@@ -165,7 +165,7 @@
     handX = width - 70;
     handY = 200;
     fill(255);
-    rect(width - 120,70, 100, 120);
+    rect(width - 120,70, 100, 25);
     fill(0);
     text("Spider", width - 95,90);
     image(avatar4, width - 120, 90, 100, 100);
@@ -258,6 +258,21 @@
             
             game = false; // End the game
             return;
+        }
+        if (mostRecent.getValue() == 0){
+         if (clockwise){
+           ArrayList<Card> temphand = players.get(0).getHand();
+           players.get(0).setHand(players.get(1).getHand());
+           players.get(1).setHand(players.get(2).getHand());
+           players.get(2).setHand(players.get(3).getHand());
+           players.get(3).setHand(temphand);
+         }else{
+           ArrayList<Card> temphand = players.get(0).getHand();
+           players.get(0).setHand(players.get(3).getHand());
+           players.get(3).setHand(players.get(2).getHand());
+           players.get(2).setHand(players.get(1).getHand());
+           players.get(1).setHand(temphand);
+         }
         }
 
         if (mostRecent.getValue() == 10) { 
