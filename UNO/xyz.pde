@@ -70,6 +70,8 @@
   }
   
   public void draw() {
+    
+    //basic map images
     image(Desk,0,0, width, height);
     if (whosTurn == 0){
       image(star, 80, height - 110, 100, 100);
@@ -94,7 +96,10 @@
     else{
       image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
     }
-
+    
+    //start setting up players
+    
+    //player at top of screen
     int handX = 200; 
     int handY = 50; 
     for (Card card : players.get(2).getHand()) {
@@ -103,6 +108,8 @@
       handX += 60; 
       }
     }
+    
+    //your player
     handY = height - 80;
     handX = 200;
     for (Card card : players.get(0).getHand()) {
@@ -120,6 +127,8 @@
         handX += 60;
       }
     }
+    
+    //left handside player
     handX = 10;
     handY = 80;
     for (Card card : players.get(3).getHand()) {
@@ -128,6 +137,8 @@
         handY += 50; 
       }
     }
+    
+    //right handside player
     handX = width - 70;
     handY = 80;
     for (Card card : players.get(1).getHand()) {
@@ -136,13 +147,15 @@
         handY += 50; 
       }
     }
-
+    
+    
+    //draw card in bottom right
     int deckX = width - 60; 
     int deckY = height - 80; 
-    image(Deck, deckX, deckY, 50, 70);
+    image(Deck, deckX, deckY, 50, 70); 
     
     
-    
+    //cpu turns
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
@@ -155,9 +168,15 @@
     }
     
     if (!game){
-      image(unoSymbol, width/2,height/2, 500, 500);
+      image(unoSymbol, width/2,height/2, 500, 500); //show uno symbol when game ends
     }
   }
+  
+  
+  
+  
+  
+  
   void mouseClicked(){
     if (whosTurn == 0 && game) {
       if (mouseX >= width - 60 && mouseX <= width - 10 &&
