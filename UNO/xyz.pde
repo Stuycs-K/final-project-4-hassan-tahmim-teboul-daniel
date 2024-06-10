@@ -41,6 +41,10 @@
 
     public void setup() {
     size(1600, 1000);
+<<<<<<< HEAD
+=======
+
+>>>>>>> tahmim-branch
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
     back = loadImage("Images/unoCard.jpg");
@@ -52,6 +56,14 @@
     verticalArrow = loadImage("Images/verticalArrow.png");
     clock = loadImage("Images/clockwise.png");
     counterClock = loadImage("Images/counterClock.png");
+<<<<<<< HEAD
+=======
+    avatar1 = loadImage("Images/avatar1.png");
+    avatar2 = loadImage("Images/avatar2.png");
+    avatar3 = loadImage("Images/avatar3.png");
+    avatar4 = loadImage("Images/avatar4.png");
+
+>>>>>>> tahmim-branch
 
     setupHands();
     mostRecent = deck.remove(0);
@@ -70,7 +82,11 @@
     //basic map images
     image(Desk,0,0, width, height);
     if (whosTurn == 0){
+<<<<<<< HEAD
       image(star, 80, height - 110, 100, 100);
+=======
+      image(star, 80, height - 250, 100, 100);
+>>>>>>> tahmim-branch
     }
     else if (whosTurn == 3){
       image(star,80,200,100,100);
@@ -92,12 +108,23 @@
     else{
       image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
     }
+<<<<<<< HEAD
     
     
     //start setting up players
     //player at top of screen
     int handX = 200; 
+=======
+
+    int handX = 300; 
+>>>>>>> tahmim-branch
     int handY = 50; 
+    fill(255);
+    rect(180, 10, 100 ,120);
+    textSize(20);
+    fill(0);
+    text("Donald", 200, 30);
+    image(avatar2, 180, 30, 100, 100);
     for (Card card : players.get(2).getHand()) {
       if(card != null){
         image(back, handX, handY, 50, 70);
@@ -109,6 +136,12 @@
     //your player
     handY = height - 80;
     handX = 200;
+    fill(255);
+    rect(80,height - 130, 100, 120);
+    textSize(20);
+    fill(0);
+    text("Batman", 95, height - 110);
+    image(avatar1, 80, height - 110, 100, 100);
     for (Card card : players.get(0).getHand()) {
       if( card != null){
         if (handX >= 1440){
@@ -128,7 +161,12 @@
     
     //left handside player
     handX = 10;
-    handY = 80;
+    handY = 200;
+    fill(255);
+    rect(10,70, 100, 120);
+    fill(0);
+    text("Harley", 35,90);
+    image(avatar3, 10, 90, 100, 100);
     for (Card card : players.get(3).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
@@ -139,7 +177,12 @@
     
     //right handside player
     handX = width - 70;
-    handY = 80;
+    handY = 200;
+    fill(255);
+    rect(width - 120,70, 100, 120);
+    fill(0);
+    text("Spider", width - 95,90);
+    image(avatar4, width - 120, 90, 100, 100);
     for (Card card : players.get(1).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
@@ -154,7 +197,11 @@
     image(Deck, deckX, deckY, 50, 70); 
     
     
+<<<<<<< HEAD
     //cpu turns
+=======
+    
+>>>>>>> tahmim-branch
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
@@ -169,6 +216,10 @@
     //show uno symbol when game ends
     if (!game){
       image(unoSymbol, width/2,height/2, 500, 500); 
+    }
+    
+    if (!game){
+      image(unoSymbol, width/2,height/2, 500, 500);
     }
   }
   //end of draw()

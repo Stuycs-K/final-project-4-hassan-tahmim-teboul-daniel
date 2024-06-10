@@ -50,5 +50,8 @@ class Player{
  public Card get(int index){
   return hand.get(index); 
  }
+ public String getName(){
+  return name; 
+ }
 }
     
