@@ -15,7 +15,7 @@
  
   
   public void setupHands(){
-   players.add(new Player(deck, "Player 1"));
+   players.add(new Player(deck, "Mr. K"));
    players.add(new Player(deck, "Spider"));  //players index 1, cpu
    players.add(new Player(deck, "Donald"));  //players index 2, cpu
    players.add(new Player(deck, "Harley"));  //players index 3, cpu
