@@ -223,7 +223,8 @@
       rect(650,700, 300 ,100);
       fill(0);
       textSize(24);
-      text(players.get(whosTurn).getName() + " wins!", 740 , 750);
+      text(players.get(whosTurn).getName() + " wins!", 720 , 750);
+      text( "Press K to restart.", 720 , 770);
       
       
 
