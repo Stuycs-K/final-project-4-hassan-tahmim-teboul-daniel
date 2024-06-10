@@ -14,14 +14,12 @@
  
   
   public void setupHands(){
-  
    players.add(new Player(deck, "Player 1"));
    players.add(new Player(deck, "CPU"));  //players index 1, cpu
    players.add(new Player(deck, "CPU2"));  //players index 1, cpu
    players.add(new Player(deck, "CPU3"));  //players index 1, cpu
-
-   
   }
+  
   
   public void cpuTurn(){
     if (game){
@@ -37,14 +35,12 @@
     }
       cpu.drawCard(deck);
     }
-       
     }
   }
   
 
     public void setup() {
     size(1600, 1000);
-
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
     back = loadImage("Images/unoCard.jpg");
@@ -57,17 +53,17 @@
     clock = loadImage("Images/clockwise.png");
     counterClock = loadImage("Images/counterClock.png");
 
-
     setupHands();
     mostRecent = deck.remove(0);
     while (mostRecent.getValue() >= 10){ //change later so that no specials are played first, put back into deck as well
       mostRecent=deck.remove(0);
-      
     }
     pile.add(mostRecent);
-    
-
   }
+  
+  
+  
+  
   
   public void draw() {
     
@@ -97,8 +93,8 @@
       image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
     }
     
-    //start setting up players
     
+    //start setting up players
     //player at top of screen
     int handX = 200; 
     int handY = 50; 
@@ -108,6 +104,7 @@
       handX += 60; 
       }
     }
+    
     
     //your player
     handY = height - 80;
@@ -128,6 +125,7 @@
       }
     }
     
+    
     //left handside player
     handX = 10;
     handY = 80;
@@ -137,6 +135,7 @@
         handY += 50; 
       }
     }
+    
     
     //right handside player
     handX = width - 70;
@@ -159,19 +158,20 @@
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
-
-
+    
+    //displays the last card in the pile
     if (!pile.isEmpty()) {
       int pileX = width / 2 - 25;
       int pileY = height / 2 - 30; 
-      pile.get(pile.size() - 1).display(pileX, pileY); //displays the last card in the pile( so the card that needs to be compared to
+      pile.get(pile.size() - 1).display(pileX, pileY); 
     }
     
+    //show uno symbol when game ends
     if (!game){
-      image(unoSymbol, width/2,height/2, 500, 500); //show uno symbol when game ends
+      image(unoSymbol, width/2,height/2, 500, 500); 
     }
   }
-  
+  //end of draw()
   
   
   
@@ -185,17 +185,19 @@
               deck = new Deck();
             }
         players.get(0).drawCard(deck);
-      } else {
+      } 
+      
+      else {
         int cardIndex = checkCardClicked();
         if (cardIndex != -1) {
           Card chosecard = players.get(whosTurn).get(cardIndex);
           playCard(chosecard, players.get(0));
-
         }
       }
     }
-
   }
+  
+  
   private int checkCardClicked() {
     int handX = 200; 
     int cardWidth = 50; 
@@ -209,6 +211,8 @@
     }
     return -1;
   }
+  
+  
  private void playCard(Card chosenCard, Player player) {
     if (chosenCard.isValid(mostRecent)) { 
         mostRecent = chosenCard;
@@ -222,7 +226,6 @@
             return;
         }
 
-        // Skip and Reverse both act the same: skip the other player's turn (will change when adding more people)
         if (mostRecent.getValue() == 10) { 
             whosTurn = (whosTurn + 2)  % players.size();
         } else {
