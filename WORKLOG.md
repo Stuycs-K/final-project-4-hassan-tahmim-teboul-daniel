@@ -2,6 +2,9 @@
 
 ## Daniel Teboul
 
+### 6/9 - 6/10
+Finished the game. Added turn and turn direction indicators, added 7's and 0's, fixed various bugs, added avatars.
+
 ### 6/8
 Fixed drawCard
 
