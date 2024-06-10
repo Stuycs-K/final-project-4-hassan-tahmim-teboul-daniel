@@ -41,10 +41,7 @@
 
     public void setup() {
     size(1600, 1000);
-<<<<<<< HEAD
-=======
 
->>>>>>> tahmim-branch
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
     back = loadImage("Images/unoCard.jpg");
@@ -56,14 +53,11 @@
     verticalArrow = loadImage("Images/verticalArrow.png");
     clock = loadImage("Images/clockwise.png");
     counterClock = loadImage("Images/counterClock.png");
-<<<<<<< HEAD
-=======
     avatar1 = loadImage("Images/avatar1.png");
     avatar2 = loadImage("Images/avatar2.png");
     avatar3 = loadImage("Images/avatar3.png");
     avatar4 = loadImage("Images/avatar4.png");
 
->>>>>>> tahmim-branch
 
     setupHands();
     mostRecent = deck.remove(0);
