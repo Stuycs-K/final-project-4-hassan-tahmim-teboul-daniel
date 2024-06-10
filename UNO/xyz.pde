@@ -113,7 +113,7 @@
     textSize(20);
     fill(0);
     text("Donald", 200, 30);
-    image(avatar2, 180, 30, 100, 100);
+    image(avatar2, 180, 37, 100, 100);
     for (Card card : players.get(2).getHand()) {
       if(card != null){
         image(back, handX, handY, 50, 70);
@@ -130,7 +130,7 @@
     textSize(20);
     fill(0);
     text("Batman", 95, height - 110);
-    image(avatar1, 80, height - 110, 100, 100);
+    image(avatar1, 80, height - 103, 100, 100);
     for (Card card : players.get(0).getHand()) {
       if( card != null){
         if (handX >= 1440){
@@ -155,7 +155,7 @@
     rect(10,70, 100, 25);
     fill(0);
     text("Harley", 35,90);
-    image(avatar3, 10, 90, 100, 100);
+    image(avatar3, 10, 97, 100, 100);
     for (Card card : players.get(3).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
@@ -171,7 +171,7 @@
     rect(width - 120,70, 100, 25);
     fill(0);
     text("Spider", width - 95,90);
-    image(avatar4, width - 120, 90, 100, 100);
+    image(avatar4, width - 120, 97, 100, 100);
     for (Card card : players.get(1).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
