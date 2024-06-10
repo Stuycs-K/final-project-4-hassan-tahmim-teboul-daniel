@@ -11,15 +11,16 @@ Deck is in the bottom right of the screen.
 Our model follows house rules.
 
 ## Instructions
-Our project has a lot of images, but they're all in their own folder in the UNO directory. 
+Our project has a lot of images, but they're all in their own folder in the UNO directory. Our screen size is 1600 * 1000.
+ 
 To play a card, click on it when the star is near you and it is shown to be playable. The star indicates which players turn it is.
 When playing a 0, all players swap cards with the player on their left or right based on the direction of the game, indicated by the arrows.
 When playing a 7, the player will swap hands with whoever has the smallest hand. 
 To draw a card, click on the deck in the bottom right. When no cards are able to be played, 2 Arrows indicate the deck.
 
-# Shortcuts
+### Shortcuts
 To end the game instantly, press K. Press K again when prompted to restart the game. 
 
-# Bugs
+### Bugs
 So far, the only bug we've found is that when using K to end an already restarted game, it crashes. 
 
