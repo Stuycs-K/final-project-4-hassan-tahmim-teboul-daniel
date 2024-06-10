@@ -32,6 +32,9 @@
         playCard(chosen, cpu); 
     }
     else{
+      if (deck.size() == 0){
+        deck = new Deck();
+    }
       cpu.drawCard(deck);
     }
        
@@ -138,6 +141,8 @@
     int deckY = height - 80; 
     image(Deck, deckX, deckY, 50, 70);
     
+    
+    
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
@@ -157,6 +162,9 @@
     if (whosTurn == 0 && game) {
       if (mouseX >= width - 60 && mouseX <= width - 10 &&
           mouseY >= height - 80 && mouseY <= height - 10) {
+            if (deck.size() == 0){
+              deck = new Deck();
+            }
         players.get(0).drawCard(deck);
       } else {
         int cardIndex = checkCardClicked();
