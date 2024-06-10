@@ -60,5 +60,9 @@ class Player{
  public void add(Deck deck){
    hand.add(deck.remove((int)(Math.random() * deck.size())));
 }
+
+public int getSize(){
+  return hand.size();
+}
 }
     

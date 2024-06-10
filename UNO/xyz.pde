@@ -319,6 +319,19 @@
            players.get(1).setHand(temphand);
          }
         }
+        
+        if (mostRecent.getValue() == 7){
+          int playerIndex = players.indexOf(player);
+          for (int i = 0; i < 4; i++){
+            if (i != playerIndex){
+              if (players.get(i).getSize() < player.getSize()){
+                ArrayList<Card> temp = players.get(i).getHand();
+                players.get(i).setHand(player.getHand());
+                player.setHand(temp);
+              }
+            }
+          }
+        }
 
         if (mostRecent.getValue() == 10) { 
             whosTurn = (whosTurn + 2)  % players.size();
