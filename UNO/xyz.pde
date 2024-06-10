@@ -244,7 +244,19 @@
               deck = new Deck();
             }
         players.get(0).drawCard(deck);
-      } 
+        if (clockwise){
+              if (whosTurn == 0){
+                whosTurn = 3;
+              }
+              else{
+              whosTurn = (whosTurn - 1) % players.size();
+              }
+            }
+            else{
+            whosTurn = (whosTurn + 1) % players.size();
+          }
+        }
+       
       
       else {
         int cardIndex = checkCardClicked();
@@ -261,6 +273,7 @@
         }
     }
   }
+ 
   
   
   private int checkCardClicked() {
