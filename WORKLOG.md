@@ -45,6 +45,14 @@ Added the card class with appropriate fields and methods
 
 ## Tahmim Hassan
 
+### 6/9
+
+Added reverse functionality and 0 functionality, where if 0 is played, hands will be switched based on direction of play, also added player images and names
+
+### 6/8
+
+Added players 2 3 and 4 and placed them accordingly coutner clockwise
+
 ### 6/7 
 Added images for background and deck, fixed more syntax
 
