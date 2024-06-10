@@ -217,11 +217,16 @@
     
     //show uno symbol when game ends
     if (!game){
-      image(unoSymbol, width/2,height/2, 500, 500); 
-    }
-    
-    if (!game){
-      image(unoSymbol, width/2,height/2, 500, 500);
+      image(Desk,0,0, width, height);
+      image(unoSymbol, 500, 100, 600, 500);
+      fill(255);
+      rect(650,700, 300 ,100);
+      fill(0);
+      textSize(24);
+      text(players.get(whosTurn).getName() + " wins!", 740 , 750);
+      
+      
+
     }
     }
     if (mode == 0){
@@ -290,6 +295,12 @@
     return -1;
   }
   
+  void keyPressed() {
+    if (key == 'k'){
+     game = !game; 
+    }
+    
+  }
   
  private void playCard(Card chosenCard, Player player) {
     if (chosenCard.isValid(mostRecent)) { 
