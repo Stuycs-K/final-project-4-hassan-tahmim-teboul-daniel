@@ -98,11 +98,10 @@
     else{
       image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
     }
-    
-    
+
+
     //start setting up players
     //player at top of screen
-
     int handX = 300; 
     int handY = 50; 
     fill(255);
@@ -183,7 +182,6 @@
     image(Deck, deckX, deckY, 50, 70); 
     
     
-
     //cpu turns
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
