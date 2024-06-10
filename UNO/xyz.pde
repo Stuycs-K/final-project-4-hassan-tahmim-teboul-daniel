@@ -102,8 +102,6 @@
 
     //start setting up players
     //player at top of screen
-   
-
     int handX = 300; 
     int handY = 50; 
     fill(255);
