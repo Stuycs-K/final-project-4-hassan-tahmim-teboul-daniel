@@ -32,6 +32,9 @@
         playCard(chosen, cpu); 
     }
     else{
+      if (deck.size() == 0){
+        deck = new Deck();
+    }
       cpu.drawCard(deck);
     }
        
@@ -40,7 +43,7 @@
   
 
     public void setup() {
-    size(1600, 600);
+    size(1600, 1000);
 
     Desk = loadImage("Images/redBackground.jpg");
     Deck = loadImage("Images/drawCard.jpg");
@@ -48,6 +51,15 @@
     back1 = loadImage("Images/unoCard -Copy1.jpg");
     back2 = loadImage("Images/unoCard -Copy.jpg");
     unoSymbol = loadImage("Images/unoSymbol.png");
+    star = loadImage("Images/star.png");
+    rightArrow = loadImage("Images/arrow2.png");
+    verticalArrow = loadImage("Images/verticalArrow.png");
+    clock = loadImage("Images/clockwise.png");
+    counterClock = loadImage("Images/counterClock.png");
+    avatar1 = loadImage("Images/avatar1.png");
+    avatar2 = loadImage("Images/avatar2.png");
+    avatar3 = loadImage("Images/avatar3.png");
+    avatar4 = loadImage("Images/avatar4.png");
 
 
     setupHands();
@@ -63,10 +75,38 @@
   
   public void draw() {
     image(Desk,0,0, width, height);
+    if (whosTurn == 0){
+      image(star, 80, height - 250, 100, 100);
+    }
+    else if (whosTurn == 3){
+      image(star,80,200,100,100);
+    }
+    else if (whosTurn == 2){
+      image(star, 360, 130, 100, 100);
+    }
+    else if (whosTurn == 1){
+      image(star, width - 195, 200, 100, 100);
+    }
+    if (whosTurn == 0 && players.get(0).canPlay(mostRecent) == -1){
+      image(rightArrow, width - 190, height - 80, 120, 60);
+      image(verticalArrow,width - 67,height - 210, 60, 120);
+    }
+    
+    if (clockwise){
+      image(clock, (width / 2) - 100, (height / 2) - 90, 200, 200);
+    }
+    else{
+      image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
+    }
 
-
-    int handX = 200; 
+    int handX = 300; 
     int handY = 50; 
+    fill(255);
+    rect(180, 10, 100 ,120);
+    textSize(20);
+    fill(0);
+    text("Donald", 200, 30);
+    image(avatar2, 180, 30, 100, 100);
     for (Card card : players.get(2).getHand()) {
       if(card != null){
         image(back, handX, handY, 50, 70);
@@ -75,14 +115,34 @@
     }
     handY = height - 80;
     handX = 200;
+    fill(255);
+    rect(80,height - 130, 100, 120);
+    textSize(20);
+    fill(0);
+    text("Batman", 95, height - 110);
+    image(avatar1, 80, height - 110, 100, 100);
     for (Card card : players.get(0).getHand()) {
       if( card != null){
-        card.display(handX, handY);
+        if (handX >= 1440){
+          handX = 200;
+          handY -= 100;
+        }
+        if (whosTurn == 0 && card.isValid(mostRecent)){
+          card.display(handX, handY - 20);
+        }
+        else{
+          card.display(handX, handY);
+        }
         handX += 60;
       }
     }
     handX = 10;
-    handY = 80;
+    handY = 200;
+    fill(255);
+    rect(10,70, 100, 120);
+    fill(0);
+    text("Harley", 35,90);
+    image(avatar3, 10, 90, 100, 100);
     for (Card card : players.get(3).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
@@ -90,7 +150,12 @@
       }
     }
     handX = width - 70;
-    handY = 80;
+    handY = 200;
+    fill(255);
+    rect(width - 120,70, 100, 120);
+    fill(0);
+    text("Spider", width - 95,90);
+    image(avatar4, width - 120, 90, 100, 100);
     for (Card card : players.get(1).getHand()) {
       if(card != null){
         image(back1, handX, handY, 50, 70);
@@ -102,6 +167,8 @@
     int deckY = height - 80; 
     image(Deck, deckX, deckY, 50, 70);
     
+    
+    
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
@@ -112,11 +179,18 @@
       int pileY = height / 2 - 30; 
       pile.get(pile.size() - 1).display(pileX, pileY); //displays the last card in the pile( so the card that needs to be compared to
     }
+    
+    if (!game){
+      image(unoSymbol, width/2,height/2, 500, 500);
+    }
   }
   void mouseClicked(){
     if (whosTurn == 0 && game) {
       if (mouseX >= width - 60 && mouseX <= width - 10 &&
           mouseY >= height - 80 && mouseY <= height - 10) {
+            if (deck.size() == 0){
+              deck = new Deck();
+            }
         players.get(0).drawCard(deck);
       } else {
         int cardIndex = checkCardClicked();
@@ -150,7 +224,7 @@
 
         if (player.getHand().isEmpty()) {
             System.out.println(player.name + " wins!");
-            image(unoSymbol, width/2,height/2, 200, 200);
+            
             game = false; // End the game
             return;
         }

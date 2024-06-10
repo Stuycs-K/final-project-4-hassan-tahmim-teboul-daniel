@@ -42,13 +42,16 @@ class Player{
     hand.remove(chosen);
   }
   public Card drawCard(Deck deck){
-    Card newCard = (deck.remove((int)Math.random() * deck.size()));
+    Card newCard = (deck.remove((int)(Math.random() * deck.size())));
     hand.add(newCard);
     sortHand();
     return newCard;
  }
  public Card get(int index){
   return hand.get(index); 
+ }
+ public String getName(){
+  return name; 
  }
 }
     
