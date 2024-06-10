@@ -17,3 +17,9 @@ When playing a 0, all players swap cards with the player on their left or right 
 When playing a 7, the player will swap hands with whoever has the smallest hand. 
 To draw a card, click on the deck in the bottom right. When no cards are able to be played, 2 Arrows indicate the deck.
 
+# Shortcuts
+To end the game instantly, press K. Press K again when prompted to restart the game. 
+
+# Bugs
+So far, the only bug we've found is that when using K to end an already restarted game, it crashes. 
+
