@@ -8,10 +8,12 @@ Cards are shown to be playable by being above the rest of the hand.
 Pile is in the center showing the most recently played card.
 Around the Pile are arrows indicating the direction of the game.
 Deck is in the bottom right of the screen.
+Our model follows house rules.
 
 ## Instructions
 Our project has a lot of images, but they're all in their own folder in the UNO directory. 
 To play a card, click on it when the star is near you and it is shown to be playable. The star indicates which players turn it is.
 When playing a 0, all players swap cards with the player on their left or right based on the direction of the game, indicated by the arrows.
-To draw a card, click on the deck in the bottom right, when no cards are able to be played, 3 Arrows indicate the deck.
+When playing a 7, the player will swap hands with whoever has the smallest hand. 
+To draw a card, click on the deck in the bottom right. When no cards are able to be played, 2 Arrows indicate the deck.
 
