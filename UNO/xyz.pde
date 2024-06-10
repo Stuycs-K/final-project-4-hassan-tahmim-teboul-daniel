@@ -16,9 +16,9 @@
   
   public void setupHands(){
    players.add(new Player(deck, "Player 1"));
-   players.add(new Player(deck, "CPU"));  //players index 1, cpu
-   players.add(new Player(deck, "CPU2"));  //players index 1, cpu
-   players.add(new Player(deck, "CPU3"));  //players index 1, cpu
+   players.add(new Player(deck, "Donald"));  //players index 1, cpu
+   players.add(new Player(deck, "Harley"));  //players index 1, cpu
+   players.add(new Player(deck, "Spider"));  //players index 1, cpu
   }
   
   
@@ -304,6 +304,7 @@
             return;
         }
         if (mostRecent.getValue() == 0){
+          
          if (clockwise){
            ArrayList<Card> temphand = players.get(0).getHand();
            players.get(0).setHand(players.get(1).getHand());

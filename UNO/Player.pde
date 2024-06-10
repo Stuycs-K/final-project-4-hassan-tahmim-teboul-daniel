@@ -56,5 +56,9 @@ class Player{
  public String getName(){
   return name; 
  }
+ 
+ public void add(Deck deck){
+   hand.add(deck.remove((int)(Math.random() * deck.size())));
+}
 }
     
