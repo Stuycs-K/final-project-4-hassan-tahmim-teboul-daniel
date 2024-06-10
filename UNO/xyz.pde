@@ -9,6 +9,7 @@
   public boolean game = true;
   public Card mostRecent;
   public ArrayList<Card> pile = new ArrayList<Card>();
+  public int mode = 0;
   
   
  
@@ -57,6 +58,7 @@
     avatar2 = loadImage("Images/avatar2.png");
     avatar3 = loadImage("Images/avatar3.png");
     avatar4 = loadImage("Images/avatar4.png");
+    playButton = loadImage("Images/playButton.png");
 
 
     setupHands();
@@ -75,6 +77,8 @@
     
     //basic map images
     image(Desk,0,0, width, height);
+
+    if (mode == 1){
     if (whosTurn == 0){
       image(star, 80, height - 250, 100, 100);
     }
@@ -202,6 +206,12 @@
     if (!game){
       image(unoSymbol, width/2,height/2, 500, 500);
     }
+    }
+    if (mode == 0){
+      image(unoSymbol, 500, 100, 600, 500);
+      image(playButton, 650 , 700, 300, 250);  
+      
+    }
   }
   //end of draw()
   
@@ -210,7 +220,7 @@
   
   
   void mouseClicked(){
-    if (whosTurn == 0 && game) {
+    if (mode == 1 && whosTurn == 0 && game ) {
       if (mouseX >= width - 60 && mouseX <= width - 10 &&
           mouseY >= height - 80 && mouseY <= height - 10) {
             if (deck.size() == 0){
@@ -226,6 +236,12 @@
           playCard(chosecard, players.get(0));
         }
       }
+    }
+    if (mode == 0){ 
+      if(mouseX >= 650 && mouseX <= 950 && 
+        mouseY >= 700 && mouseY <= 950){
+         mode = 1; 
+        }
     }
   }
   

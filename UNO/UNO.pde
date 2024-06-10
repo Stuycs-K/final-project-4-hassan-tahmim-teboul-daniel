@@ -13,6 +13,7 @@ PImage avatar1;
 PImage avatar2;
 PImage avatar3;
 PImage avatar4;
+PImage playButton;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
