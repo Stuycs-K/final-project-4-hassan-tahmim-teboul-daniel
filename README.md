@@ -29,3 +29,6 @@ To end the game instantly, press K. Press K again when prompted to restart the g
 ### Bugs
 So far, the only bug we've found is that when using K to end an already restarted game, it crashes. 
 
+## Link to Presentation
+https://drive.google.com/file/d/1X_Zhtkt8H2xUZEAPm5U_pK3vVbv0eVNL/view?usp=sharing
+
