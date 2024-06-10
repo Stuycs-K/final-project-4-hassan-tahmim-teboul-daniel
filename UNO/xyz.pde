@@ -76,11 +76,7 @@
     //basic map images
     image(Desk,0,0, width, height);
     if (whosTurn == 0){
-<<<<<<< HEAD
-      image(star, 80, height - 110, 100, 100);
-=======
       image(star, 80, height - 250, 100, 100);
->>>>>>> tahmim-branch
     }
     else if (whosTurn == 3){
       image(star,80,200,100,100);
@@ -102,16 +98,13 @@
     else{
       image(counterClock, (width / 2) - 100, (height / 2) - 90, 200, 200);
     }
-<<<<<<< HEAD
-    
-    
+
+
     //start setting up players
     //player at top of screen
-    int handX = 200; 
-=======
+   
 
     int handX = 300; 
->>>>>>> tahmim-branch
     int handY = 50; 
     fill(255);
     rect(180, 10, 100 ,120);
@@ -191,11 +184,7 @@
     image(Deck, deckX, deckY, 50, 70); 
     
     
-<<<<<<< HEAD
     //cpu turns
-=======
-    
->>>>>>> tahmim-branch
     if (whosTurn % 4 != 0 && frameCount % 50 == 0) {
     cpuTurn();
     }
