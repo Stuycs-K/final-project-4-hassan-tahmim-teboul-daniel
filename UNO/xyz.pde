@@ -65,7 +65,7 @@
     verticalArrow = loadImage("Images/verticalArrow.png");
     clock = loadImage("Images/clockwise.png");
     counterClock = loadImage("Images/counterClock.png");
-    avatar1 = loadImage("Images/avatar1.png");
+    avatar1 = loadImage("Images/mrK.png");
     avatar2 = loadImage("Images/avatar2.png");
     avatar3 = loadImage("Images/avatar3.png");
     avatar4 = loadImage("Images/avatar4.png");
@@ -139,11 +139,11 @@
     handY = height - 80;
     handX = 200;
     fill(255);
-    rect(80,height - 130, 100, 25);
+    rect(80,height - 150, 75, 25);
     textSize(20);
     fill(0);
-    text("Batman", 95, height - 110);
-    image(avatar1, 80, height - 103, 100, 100);
+    text("Mr. K", 95, height - 130);
+    image(avatar1, 60, height - 120, 120, 200);
     for (Card card : players.get(0).getHand()) {
       if( card != null){
         if (handX >= 1440){
