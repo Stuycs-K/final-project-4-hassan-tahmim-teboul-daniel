@@ -4,7 +4,7 @@
 by Daniel Teboul and Tahmim Hassan
 ## Overview
 Our project is a replica of the popular card game, UNO, in Processing. There are 108 cards in the deck.
-The game starts with 4 player objects, each with their own 7 card hands containing Card objects, taken from the pool in the Deck object.
+The game starts with 4 Player objects, each with their own hands containing 7 Card objects, taken from the Card pool in the Deck object.
 
 Each avatar is displayed next to their hand.
 Cards are shown to be playable by being above the rest of the hand.
